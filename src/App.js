@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 // import MyForm from "./components/forms/MyForm";
-import API from "./components/Api";
+import Index from "./components/Todo/Index";
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
             <Switch>
-          <Route path="/" component={API} exact />
+          <Route path="/" component={Index} exact />
 {/* 
           <Route path="/form" component={MyForm} exact /> */}
           </Switch>
