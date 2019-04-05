@@ -8,7 +8,7 @@
 | `PUT` | `http://127.0.0.1:5000/todos/todo_id`| Update One| [API](src/components/Api.js) |
 | `DELETE` | `http://127.0.0.1:5000/todos/todo_id`| Delete One| [API](src/components/Api.js)|
 
-### In [Api](src/api.js) File Define routes
+### In [Api](src/api.js) File Define all routes
 ```js
    todos() {
         return {
