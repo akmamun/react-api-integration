@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import api from '../../api'
 
 
-class Index extends Component {
+class Todo extends Component {
     constructor(props) {
         super(props);
 
@@ -13,15 +13,12 @@ class Index extends Component {
     }
 
     componentDidMount() {
-     
         api.todos().getAll()
         .then(response => this.setState({ todos: response.data }))
     }
 
     render() {
-        let { todos } = this.state;
-
-
+        const { todos } = this.state;
 
         return (
             <div className="container">
@@ -42,4 +39,4 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default Todo;
