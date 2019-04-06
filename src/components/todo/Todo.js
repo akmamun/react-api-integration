@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import api from '../../api'
+import AddTodo from "./AddTodo";
 
 
 class Todo extends Component {
@@ -22,16 +23,25 @@ class Todo extends Component {
 
         return (
             <div className="container">
-
-                {todos.map((todo, index) =>
-                    <div key={index}>
-                        <h1> {todo.title}</h1>
-                        <p> {todo.body}</p>
+               
+                <div className="row">
+                    <div className="col-lg-6">
+                        <AddTodo />
                     </div>
+                    <div className="col-lg-6">
+                    <h2>Todo</h2>
+                        {todos.map((todo, index) =>
+                            <div key={index}>
+                                <h1> {todo.title}</h1>
+                                <p> {todo.body}</p>
+                            </div>
 
-                )
+                        )
 
-                }
+                        }
+                    </div>
+                </div>
+                
 
             </div>
 
