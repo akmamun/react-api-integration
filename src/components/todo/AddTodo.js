@@ -24,7 +24,7 @@ class AddTodo extends Component {
     // get our form data out of state
     const {title, body} = this.state;  // define state variable for use in return
     api.todos().create(title, body)
-    .then(result => console.log(result))
+    .then(response => response)
   }
 
   
@@ -34,6 +34,7 @@ class AddTodo extends Component {
       <div className="container">
     
           <form onSubmit={this.onSubmit}>
+          <label>Todo Title</label>
                     <input
                       type="text"
                       name="title"
