@@ -1,36 +1,57 @@
 import React, { Component } from 'react';
+import api from '../../api';
 
 class AddTodo extends Component {
   constructor(props) {
     super(props)
-    this.state = { username: '' }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = { 
+      //initialize state keys value  
+      title : "",
+      body : ""
+    }
+  }
+  onChance = (e) => {
+     /* Because we named the inputs to match their
+          corresponding values in state, it's
+          super easy to update the state
+        */
+    this.setState({[e.target.name] : e.target.value}); 
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value })
+  onSubmit = (e) => {
+    e.preventDefault()
+            
+    // get our form data out of state
+    const {title, body} = this.state;  // define state variable for use in return
+    api.todos().create(title, body)
+    .then(result => console.log(result))
   }
 
-  handleSubmit(event) {
-    alert(this.state.username)
-    event.preventDefault()
-  }
-
-  render() {
-    return (
-      // <div className="container">
   
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-            <input type="submit" value="Submit" />
+  render() {
+    const {title, body} = this.state;  // define state variable for use in return
+    return (
+      <div className="container">
+    
+          <form onSubmit={this.onSubmit}>
+                    <input
+                      type="text"
+                      name="title"
+                      value={title}
+                      onChange={this.onChance}
+                    />
+                    <input
+                      type="text"
+                      name="body"
+                      value={body}
+                      onChange={this.onChance}
+                    />
+                  <button type="submit">Submit</button>
+
+                    
           </form>
 
-      // </div>
+      </div>
     )
   }
 }
