@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const baseUrl =  "http://127.0.0.1:5000/";
+const baseUrl =  "http://127.0.0.1:5000/api/v1/";
 const todo = baseUrl + "todos";
 
 export default {

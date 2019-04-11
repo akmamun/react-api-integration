@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api from '../../api';
+import api from '../../api'; 
 
 class AddTodo extends Component {
   constructor(props) {
@@ -22,9 +22,11 @@ class AddTodo extends Component {
     e.preventDefault()
             
     // get our form data out of state
-    const {title, body} = this.state;  // define state variable for use in return
-    api.todos().create(title, body)
-    .then(response => response)
+    const {title, body} = this.state;
+    // define state variable for use in return
+    //and store in state value
+    api.todos().create({ title: title, body: body})
+      .then(response => response);
   }
 
   
