@@ -14,7 +14,7 @@
         return {
             getOne: ({ id }) => axios.get(`${id}`),
             getAll: () => axios.get(baseUrl + todo),
-            create: (toCreate) => axios.put(toCreate),
+            create: (data) => axios.post(url, data), //url and data
             update: (toUpdate) => axios.put(toUpdate),
             delete: ({ id }) => axios.delete(`${id}`)
         }

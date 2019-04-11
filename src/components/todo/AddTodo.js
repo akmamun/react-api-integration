@@ -27,6 +27,8 @@ class AddTodo extends Component {
     //and store in state value
     api.todos().create({ title: title, body: body})
       .then(response => response);
+
+     
   }
 
   
@@ -34,28 +36,46 @@ class AddTodo extends Component {
     const {title, body} = this.state;  // define state variable for use in return
     return (
       <div className="container">
-    
+        <div className="col-lg-6">
           <form onSubmit={this.onSubmit}>
-          <label>Todo Title</label>
-                    <input
-                      type="text"
-                      name="title"
-                      value={title}
-                      onChange={this.onChance}
-                    />
-                    <input
-                      type="text"
-                      name="body"
-                      value={body}
-                      onChange={this.onChance}
-                    />
-                  <button type="submit">Submit</button>
-
-                    
+            <div class="form-group">
+              <label>
+                Todo Title :
+                <input
+                  type="text"
+                  name="title"
+                  value={title}
+                  class="form-control"
+                  placeholder="Add Todo"
+                  onChange={this.onChance}
+                  required
+                />
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                Description :
+                <textarea
+                  type="text"
+                  name="body"
+                  class="form-control"
+                  placeholder="Description"
+                  value={body}
+                  onChange={this.onChance}
+                  required
+                />
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-md btn-primary float-right"
+            >
+              Add Todo
+            </button>
           </form>
-
+        </div>
       </div>
-    )
+    );
   }
 }
 export default AddTodo;
