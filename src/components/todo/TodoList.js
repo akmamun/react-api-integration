@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import { Link} from 'react-router-dom';
 import api from '../../api'
 import AddTodo from "./AddTodo";
-
+import Todo from "./Todo";
 
 class TodoList extends Component {
     constructor(props) {
@@ -31,7 +31,8 @@ class TodoList extends Component {
                 {todos.map((todo, index) => (
                   <div key={index}>
                     <h4>
-                      <a href=""> {todo.title}</a>
+                      <Link to={"/todo/" + todo._id}>{todo.title}</Link>
+                      {/* <Todo/> */}
                     </h4>
                     <p> {todo.body}</p>
                   </div>

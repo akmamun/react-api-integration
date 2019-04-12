@@ -11,24 +11,26 @@ class AddTodo extends Component {
     }
   }
   onChance = (e) => {
-     /* Because we named the inputs to match their
-          corresponding values in state, it's
-          super easy to update the state
-        */
+     /* Because we named the inputs to match their corresponding values in state, it's
+          super easy to update the state  */
     this.setState({[e.target.name] : e.target.value}); 
   }
 
   onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault() //prevent load
             
     // get our form data out of state
     const {title, body} = this.state;
     // define state variable for use in return
     //and store in state value
     api.todos().create({ title: title, body: body})
-      .then(response => response);
-
-     
+      .then(response => response)
+      .then(this.setState({   //clear inputs after submit
+        title: "",
+        body: ""
+      }))
+      ;
+    
   }
 
   
@@ -38,27 +40,27 @@ class AddTodo extends Component {
       <div className="container">
         <div className="col-lg-6">
           <form onSubmit={this.onSubmit}>
-            <div class="form-group">
+            <div className="form-group">
               <label>
                 Todo Title :
                 <input
                   type="text"
                   name="title"
                   value={title}
-                  class="form-control"
+                  className="form-control"
                   placeholder="Add Todo"
                   onChange={this.onChance}
                   required
                 />
               </label>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label>
                 Description :
                 <textarea
                   type="text"
                   name="body"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Description"
                   value={body}
                   onChange={this.onChance}
@@ -68,7 +70,7 @@ class AddTodo extends Component {
             </div>
             <button
               type="submit"
-              class="btn btn-md btn-primary float-right"
+              className="btn btn-md btn-primary float-right"
             >
               Add Todo
             </button>

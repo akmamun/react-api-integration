@@ -1,15 +1,15 @@
 const axios = require('axios')
 
-const baseUrl =  "http://127.0.0.1:5000/api/v1/";
-const todo = baseUrl + "todos";
+const apiUrl =  "http://127.0.0.1:5000/api/v1/";
+const todos = apiUrl + "todos";
 
 export default {
    
     todos() {
         return {
-            getOne: ({ id }) => axios.get(`${id}`),
-            getAll: () => axios.get(todo),
-            create: (data) => axios.post(todo, data), //url, data
+            getOne: ({id}) => axios.get(todos + `/${id}`), //url, id
+            getAll: () => axios.get(todos),
+            create: (data) => axios.post(todos, data), //url, data
             update: (toUpdate) => axios.put(toUpdate),
             delete: ({ id }) => axios.delete(`${id}`)
         }
