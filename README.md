@@ -2,11 +2,11 @@
 #### List of Todo API Routes
 | Request | Endpoint |  Details | Example Source |
 | --- | --- | --- | --- |
-| `GET` | `http://127.0.0.1:5000/todos`| Get All| [API](src/components/Todo/Index.js) |
-| `GET` | `http://127.0.0.1:5000/todos/todo_id`| Get Single Id| [API](src/components/Api.js)|
-| `POST` | `http://127.0.0.1:5000/todos`| Insert One| [API](src/components/Api.js)|
-| `PUT` | `http://127.0.0.1:5000/todos/todo_id`| Update One| [API](src/components/Api.js) |
-| `DELETE` | `http://127.0.0.1:5000/todos/todo_id`| Delete One| [API](src/components/Api.js)|
+| `GET` | `http://127.0.0.1:5000/todos`| Get All| [Todo List](src/components/todo/TodoList.js) |
+| `GET` | `http://127.0.0.1:5000/todos/todo_id`| Get Single Id| [Todo](src/components/todo/Todo.js)|
+| `POST` | `http://127.0.0.1:5000/todos`| Insert One| [Add Todo](src/components/todo/AddTodo.js)|
+| `PUT` | `http://127.0.0.1:5000/todos/todo_id`| Update One| [Update Todo](src/components/todo/Edit.js) |
+| `DELETE` | `http://127.0.0.1:5000/todos/todo_id`| Delete One| [Delete Todo](src/components/todo/Todo.js)|
 
 ### In [Api](src/api.js) File Define all routes
 ```js
@@ -22,6 +22,7 @@ todos() {
             delete: ({ id }) => axios.delete(todos + `/${id}`)//id_url
         }
     }
+```
 ### Uses of route
 ```js
 api.todos().getAll()
