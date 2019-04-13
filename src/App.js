@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import Navbar from './components/Navbar';
 import TodoList from "./components/todo/TodoList";
 import Todo from './components/todo/Todo';
 import TodoEdit from './components/todo/Edit';
 
-library.add(faEdit)
+library.add(faEdit, faTrash)
 
 
 class App extends Component {

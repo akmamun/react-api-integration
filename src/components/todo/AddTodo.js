@@ -10,6 +10,7 @@ class AddTodo extends Component {
       body : ""
     }
   }
+
   onChance = (e) => {
      /* Because we named the inputs to match their corresponding values in state, it's
           super easy to update the state  */
@@ -17,9 +18,7 @@ class AddTodo extends Component {
   }
 
   onSubmit = (e) => {
-        this.props.history.push("/")
-    e.preventDefault() //prevent load
-            
+    e.preventDefault() //prevent load   
     // get our form data out of state
     const {title, body} = this.state;
     // define state variable for use in return
@@ -29,11 +28,8 @@ class AddTodo extends Component {
       .then(this.setState({   //clear inputs after submit
         title: "",
         body: ""
-      }));
-      
+      })); 
   }
-  
-
   
   render() {
     const {title, body} = this.state;  // define state variable for use in return
@@ -66,14 +62,12 @@ class AddTodo extends Component {
                   value={body}
                   onChange={this.onChance}
                   rows="4"
-                  required
-                />
+                  required  />
          
             </div>
             <button
               type="submit"
-              className="btn btn-md btn-primary float-right"
-            >
+              className="btn btn-md btn-primary float-right">
               Add Todo
             </button>
           </form>

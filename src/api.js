@@ -10,14 +10,7 @@ export default {
             getAll: () => axios.get(todos),
             create: (data) => axios.post(todos, data), //url, data
             update: ({ id }, data) => axios.put(todos + `/${id}`, data), //url, data
-            delete: ({ id }) => axios.delete(`${id}`)
+            delete: ({ id }) => axios.delete(todos + `/${id}`)//id_url
         }
     }
 }
-// export default {
-//     getItems: () => {
-//         return axios.get('http://127.0.0.1:5000/todos/')
-//             .then(response => response.data);
-//     },
-//     otherApiCall: (params) => {
-//     }

@@ -8,7 +8,7 @@ class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo: []
+      todo: []  
     };
   }
 
@@ -17,15 +17,25 @@ class Todo extends Component {
     api.todos().getOne(todoId)
       .then(response => this.setState({ todo: response.data }));
   }
+  
+  onDelete = () => {
+    const todoId = this.props.match.params;
+    api.todos().delete(todoId);
+  }
 
   render() {
     const { todo } = this.state;
 
     return (
       <div className="container">
-        <div className="row">
+        <div className="row mt-5">
           <div className="col-lg-8 offset-lg-2">
-            <h4> {todo.title}  <Link to={`/todo/edit/${todo._id}`}>  <FontAwesomeIcon icon="edit" className="ml-2" /> </Link></h4> 
+            <h4> {todo.title} 
+             <Link to={`/todo/edit/${todo._id}`}> 
+              <FontAwesomeIcon icon="edit" className="ml-5" />
+               </Link>
+                <FontAwesomeIcon icon="trash" onClick={this.onDelete} className="float-right mr-5" />
+            </h4> 
               <p> {todo.body}</p>
           </div>
         </div>
