@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Link} from 'react-router-dom';
 
 import api from "../../api";
 
@@ -13,7 +15,7 @@ class Todo extends Component {
   componentDidMount() {
     const todoId = this.props.match.params;
     api.todos().getOne(todoId)
-      .then(response => console.log(this.setState({ todo: response.data })));
+      .then(response => this.setState({ todo: response.data }));
   }
 
   render() {
@@ -22,9 +24,9 @@ class Todo extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-8 offset-lg-2">
               <h2>Todo </h2>
-              <h4> {todo.title} </h4>
+            <h4> {todo.title} <Link to={`/todo/edit/${todo._id}`}><FontAwesomeIcon icon="edit" /></Link></h4> 
               <p> {todo.body}</p>
           </div>
         </div>

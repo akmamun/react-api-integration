@@ -10,16 +10,18 @@
 
 ### In [Api](src/api.js) File Define all routes
 ```js
-   todos() {
+apiUrl =  "http://127.0.0.1:5000/api/v1/";
+todos = apiUrl + "todos";
+
+todos() {
         return {
-            getOne: ({ id }) => axios.get(`${id}`),
-            getAll: () => axios.get(baseUrl + todo),
-            create: (data) => axios.post(url, data), //url and data
+            getOne: ({id}) => axios.get(todos + `/${id}`), //url, id
+            getAll: () => axios.get(todos), //url
+            create: (data) => axios.post(todos, data), //url, data
             update: (toUpdate) => axios.put(toUpdate),
             delete: ({ id }) => axios.delete(`${id}`)
         }
     }
-```
 ```js
  api.todos().getAll()
 ```
