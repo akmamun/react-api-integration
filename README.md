@@ -15,13 +15,18 @@ todos = apiUrl + "todos";
 
 todos() {
         return {
-            getOne: ({id}) => axios.get(todos + `/${id}`), //url, id
-            getAll: () => axios.get(todos), //url
+            getOne: ({id}) => axios.get(todos + `/${id}`), //id_url
+            getAll: () => axios.get(todos),
             create: (data) => axios.post(todos, data), //url, data
-            update: (toUpdate) => axios.put(toUpdate),
-            delete: ({ id }) => axios.delete(`${id}`)
+            update: ({ id }, data) => axios.put(todos + `/${id}`, data), //url, data
+            delete: ({ id }) => axios.delete(todos + `/${id}`)//id_url
         }
     }
+### Uses of route
 ```js
- api.todos().getAll()
+api.todos().getAll()
+api.todos().getOne({id})
+api.todos().create( data)
+api.todos().update({ id }, data)
+api.todos().delete({ id })
 ```
