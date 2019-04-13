@@ -25,8 +25,7 @@ class Todo extends Component {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 offset-lg-2">
-              <h2>Todo </h2>
-            <h4> {todo.title} <Link to={`/todo/edit/${todo._id}`}><FontAwesomeIcon icon="edit" /></Link></h4> 
+            <h4> {todo.title}  <Link to={`/todo/edit/${todo._id}`}>  <FontAwesomeIcon icon="edit" className="ml-2" /> </Link></h4> 
               <p> {todo.body}</p>
           </div>
         </div>

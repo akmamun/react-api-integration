@@ -17,6 +17,7 @@ class AddTodo extends Component {
   }
 
   onSubmit = (e) => {
+        this.props.history.push("/")
     e.preventDefault() //prevent load
             
     // get our form data out of state
@@ -31,17 +32,18 @@ class AddTodo extends Component {
       }));
       
   }
+  
 
   
   render() {
     const {title, body} = this.state;  // define state variable for use in return
     return (
       <div className="container">
-        <div className="col-lg-6">
+        <div className="col-lg-9 offset-lg-1">
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>
-                Todo Title :
+                Todo Title :    </label>
                 <input
                   type="text"
                   name="title"
@@ -51,11 +53,11 @@ class AddTodo extends Component {
                   onChange={this.onChance}
                   required
                 />
-              </label>
+           
             </div>
             <div className="form-group">
               <label>
-                Description :
+                Description :      </label>
                 <textarea
                   type="text"
                   name="body"
@@ -63,9 +65,10 @@ class AddTodo extends Component {
                   placeholder="Description"
                   value={body}
                   onChange={this.onChance}
+                  rows="4"
                   required
                 />
-              </label>
+         
             </div>
             <button
               type="submit"

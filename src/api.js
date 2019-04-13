@@ -1,7 +1,7 @@
 const axios = require('axios')
 
-const apiUrl =  "http://127.0.0.1:5000/api/v1/";
-const todos = apiUrl + "todos";
+const apiUrl =  "http://127.0.0.1:5000/api/v1";
+const todos = apiUrl + "/todos";
 
 export default {
     todos() {

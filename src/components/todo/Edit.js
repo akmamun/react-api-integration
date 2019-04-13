@@ -40,37 +40,35 @@ class Todo extends Component {
 
         return (
             <div className="container"> 
-                    <div className="col-lg-9 offset-lg-2">
+                    <div className="col-lg-6 offset-2">
                                 <form onSubmit={this.onSubmit}>
                                         <div className="form-group">
-                                            <label>
-                                                Todo Title :
-                                                <input
-                                                    type="text"
-                                                    name="title"
-                                                    value={title}
+                                            <label> Todo Title : </label>
+                               
+                                            <input
+                                                type="text"
+                                                name="title"
+                                                value={title}
                                                     className="form-control"
-                                                    placeholder="Add Todo"
-                                                    onChange={this.onChance}
-                                                    required  />
-                                            </label>
+                                                placeholder="Add Todo"
+                                                onChange={this.onChance}
+                                                required  />
+                                         
                                         </div>
                                         <div className="form-group">
-                                            <label>
-                                                Description :
-                                                <textarea
-                                                    type="text"
-                                                    name="body"
-                                                    className="form-control"
-                                                    placeholder="Description"
-                                                    value={body}
-                                                    onChange={this.onChance}
-                                                    required  />
-                                            </label>
+                                            <label>  Description : </label>
+                                            <textarea type="text"
+                                                name="body"
+                                                className="form-control"
+                                                placeholder="Description"
+                                                value={body}
+                                                onChange={this.onChance}
+                                                required rows="5" />
+                                            
                                         </div>
                                         <button
                                             type="submit"
-                                            className="btn btn-md btn-secondary float-left">
+                                            className="btn btn-lg btn-primary float-right mt-2">
                                             Update 
                                         </button>
                                         {/* <button

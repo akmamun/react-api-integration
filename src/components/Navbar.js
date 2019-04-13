@@ -34,8 +34,14 @@ class Navbar extends Component {
                         <li className="nav-item">
                             <NavLink to="/"className="nav-link">
                                 Home
-                    </NavLink>
+                            </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink to="/" className="nav-link">
+                                Todo
+                            </NavLink>
+                        </li>
+
                  
                     </ul>
                 </div>
