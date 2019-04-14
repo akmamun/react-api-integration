@@ -18,7 +18,6 @@ class Todo extends Component {
                 title: response.data.title,
                 body: response.data.body
             }));
-
     }
     onChance = (e) => {
         this.setState({ [e.target.name]: e.target.value });
@@ -30,6 +29,8 @@ class Todo extends Component {
         const { title, body } = this.state;   // define state variable for use in return and store in state value
         api.todos().update(todoId, { title: title, body: body })
         .then(response => response.data);
+        
+        this.props.history.push('/');
     }
           
 

@@ -17,10 +17,10 @@ class Todo extends Component {
     api.todos().getOne(todoId)
       .then(response => this.setState({ todo: response.data }));
   }
-  
   onDelete = () => {
     const todoId = this.props.match.params;
     api.todos().delete(todoId);
+    this.props.history.push('/');
   }
 
   render() {

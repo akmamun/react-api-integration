@@ -23,7 +23,7 @@ class AddTodo extends Component {
     const {title, body} = this.state;
     // define state variable for use in return
     //and store in state value
-    api.todos().create({ title: title, body: body})
+     api.todos().create({ title: title, body: body})
       .then(response => response.data)
       .then(this.setState({   //clear inputs after submit
         title: "",
