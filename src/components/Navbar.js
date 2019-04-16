@@ -37,6 +37,11 @@ class Navbar extends Component {
                             </NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink to="/todo/add" className="nav-link">
+                                Add Todo
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink to="/" className="nav-link">
                                 Todo
                             </NavLink>

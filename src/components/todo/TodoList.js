@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 
 import api  from '../../api';
-import AddTodo from "./AddTodo";
  
-
 class TodoList extends Component {
     constructor(props) {
         super(props);
@@ -24,10 +22,7 @@ class TodoList extends Component {
         return (
           <div className="container">
             <div className="row">
-              <div className="col-lg-6">
-                <AddTodo />
-              </div>
-              <div className="col-lg-6">
+              <div className="col-lg-8 offset-lg-2">
                 <h2>Todo List</h2>
                 {todos.map((todo, index) => (
                   <div key={index}>

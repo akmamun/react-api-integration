@@ -19,8 +19,8 @@ class Todo extends Component {
   }
   onDelete = () => {
     const todoId = this.props.match.params;
-    api.todos().delete(todoId);
-    this.props.history.push('/');
+    api.todos().delete(todoId)
+      .then(response => this.props.history.push('/'));
   }
 
   render() {

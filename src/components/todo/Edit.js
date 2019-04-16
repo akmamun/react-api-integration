@@ -28,9 +28,7 @@ class Todo extends Component {
         // get our form data out of state
         const { title, body } = this.state;   // define state variable for use in return and store in state value
         api.todos().update(todoId, { title: title, body: body })
-        .then(response => response.data);
-        
-        this.props.history.push('/');
+            .then(response => this.props.history.push('/'));
     }
           
 
