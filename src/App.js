@@ -14,16 +14,15 @@ library.add(faEdit, faTrash)
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <Navbar />
         <Switch>
           <Route path="/" component={TodoList} exact />
           <Route path="/todo/add" component={AddTodo} exact />
           <Route path="/todo/:id" component={Todo} exact />
           <Route path="/todo/edit/:id" component={TodoEdit} exact />
-
         </Switch>
-      </React.Fragment>
+      </>
     );
   }
 }
