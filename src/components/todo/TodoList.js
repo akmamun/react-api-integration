@@ -31,7 +31,7 @@ class TodoList extends Component {
             {todos.map((todo, index) => (
               <div key={index}>
                 <h4>
-                  <Link to={`/todo/${todo._id}`}>{todo.title}</Link>
+                  <Link to={`/todo/${todo.id}`}>{todo.title}</Link>
                 </h4>
                 <p> {todo.body}</p>
               </div>
