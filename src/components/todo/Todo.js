@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Link} from 'react-router-dom';
 
-import api from "../../api";
+import api from "../../url";
 
 class Todo extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import api from "../../api";
+import api from "../../url";
 
 class Todo extends Component {
     constructor(props) {
